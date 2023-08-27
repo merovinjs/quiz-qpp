@@ -1,6 +1,17 @@
 .container {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #ffffff;
 }
+.answerBtn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 5px 10px 3px 20px;
+}
+
 .question {
   width: 370px;
+}
+.selecetedAnswer {
+  background-color: aquamarine;
 }
