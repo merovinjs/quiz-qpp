@@ -1,78 +1,61 @@
 import { useState } from "react";
+import { Question } from "../types/quizdatatype";
 import styles from "./styles.module.css";
-import { resultsInitialState } from "../data/quizdata";
-interface Props {
-  question: any;
-  choices: string[];
-  correctAnswer: string;
-}
-const Quiz = ({ questions }: any) => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answerIdx, setAnswerIdx] = useState(null);
-  const [answer, setAnswer] = useState(false);
-  const [result, setResult] = useState(resultsInitialState);
-  const { question, choices, correctAnswer }: Props =
-    questions[currentQuestion];
+const Quiz = ({ questions }: { questions: Question[] }) => {
+  const [score, setScore] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+  console.log(questions);
 
-  const onAnswerClick = (answer: any, index: any) => {
-    setAnswerIdx(index);
-    if (answer === correctAnswer) {
-      setAnswer(true);
+  const handleClick = (onechoise: string, onequestion: any) => {
+    const { id, correctAnswer } = onequestion;
+    if (onechoise === correctAnswer) {
+      setScore((prevScores: any) => ({
+        ...prevScores,
+        [id]: +1,
+      }));
     } else {
-      setAnswer(false);
+      setScore((prevScores: any) => ({
+        ...prevScores,
+        [id]: -0.25,
+      }));
     }
+    console.log(id, correctAnswer);
   };
-  const onClickNext = () => {
-    setAnswerIdx(null);
-    setResult((prev) =>
-      answer
-        ? {
-            ...prev,
-            score: prev.score + 1,
-            correctAnswers: prev.correctAnswers + 1,
-          }
-        : {
-            ...prev,
-            score: prev.score - 0.25,
-            wrongAnswers: prev.wrongAnswers + 1,
-          }
+  const handleTotal = () => {
+    const totalScore = Object.values(score).reduce(
+      (acc, currentValue) => acc + currentValue,
+      0
     );
-    if (currentQuestion !== questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setCurrentQuestion(0);
-    }
+    return totalScore;
   };
+  const handleSonuc = () => {
+    handleTotal();
+    setShowResult(true);
+  };
+
   return (
-    <div className={styles.container}>
-      <>
-        <span className="">{currentQuestion + 1}</span>
-        <span className="">/{questions.length}</span>
-        <div>
-          <img src={question} alt="soru" />
+    <div>
+      {questions.map((onequestion: any) => (
+        <div key={onequestion.id}>
+          <div>
+            <img src={onequestion.question} alt="" />
+          </div>
           <ul>
-            {choices.map((choice: any, index) => (
+            {onequestion.choices.map((onechoise: string, index: any) => (
               <li
-                onClick={() => onAnswerClick(choice, index)}
-                key={choice}
-                className={answerIdx === index ? styles.selecetedAnswer : ""}
+                className={styles.answerBtn}
+                onClick={() => handleClick(onechoise, onequestion)}
+                key={onequestion.id + index}
               >
-                {choice}
+                {onechoise}
               </li>
             ))}
           </ul>
         </div>
-        <div className={styles.footer}>
-          <button onClick={onClickNext}>
-            {currentQuestion === questions.length - 1
-              ? styles.finish
-              : styles.next}
-            Next
-          </button>
-        </div>
-      </>
+      ))}
+      <button onClick={handleSonuc}>Sonuç Göster</button>
+      {showResult && <div>Total Score: {handleTotal()}</div>}
     </div>
   );
 };
-
 export default Quiz;

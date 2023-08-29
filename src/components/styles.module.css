@@ -12,6 +12,11 @@
 .question {
   width: 370px;
 }
-.selecetedAnswer {
-  background-color: aquamarine;
+.answerBtnn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 5px 10px 3px 20px;
+  background-color: aqua;
 }
