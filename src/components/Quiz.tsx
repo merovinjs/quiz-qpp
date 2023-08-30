@@ -5,7 +5,6 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   console.log(questions);
-
   const handleClick = (onechoise: string, onequestion: any) => {
     const { id, correctAnswer } = onequestion;
     if (onechoise === correctAnswer) {
@@ -34,11 +33,15 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       {questions.map((onequestion: any) => (
-        <div key={onequestion.id}>
-          <div>
-            <img src={onequestion.question} alt="" />
+        <div className={styles.onequestion} key={onequestion.id}>
+          <div className={styles.imgContainer}>
+            <img
+              src={onequestion.question}
+              className={styles.questionImage}
+              alt=""
+            />
           </div>
           <ul>
             {onequestion.choices.map((onechoise: string, index: any) => (
