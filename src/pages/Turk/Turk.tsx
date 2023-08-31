@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import { quizData } from "../../data/quizdata";
 import Quiz from "../../components/Quiz";
-const T2020 = () => {
+const Turk = () => {
   return (
     <div className={styles.container}>
       <Quiz questions={quizData.questions} />
@@ -9,4 +9,4 @@ const T2020 = () => {
   );
 };
 
-export default T2020;
+export default Turk;

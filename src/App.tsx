@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import T2020 from "./pages/t2020/T2020";
 import Home from "./pages/home/Home";
+import Turk from "./pages/Turk/Turk";
+import Math from "./pages/Math/Math";
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/t2020" element={<T2020 />}></Route>
+          <Route path="/Turk" element={<Turk />}></Route>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/Math" element={<Math />}></Route>
         </Routes>
       </Router>
     </>
