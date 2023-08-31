@@ -1,6 +1,3 @@
 {
-  "routes": [
-    { "src": "/math", "dest": "/index.html" },
-    { "src": "/turk", "dest": "/index.html" }
-  ]
+  "routes": [{ "src": "/turk", "dest": "/index.html" }]
 }
