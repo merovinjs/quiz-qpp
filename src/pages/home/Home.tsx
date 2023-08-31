@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 const Home = () => {
   return (
     <>
-      <a className={styles.container} href="/t2020">
+      <a className={styles.container} href="/turk">
         türkçe
       </a>
     </>
