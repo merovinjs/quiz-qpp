@@ -1,11 +1,11 @@
 import styles from "./styles.module.css";
-import { quizData } from "../../data/quizdata";
-import Quiz from "../../components/Quiz";
 const Home = () => {
   return (
-    <div className={styles.container}>
-      <Quiz questions={quizData.questions} />
-    </div>
+    <>
+      <a className={styles.container} href="/t2020">
+        türkçe
+      </a>
+    </>
   );
 };
 

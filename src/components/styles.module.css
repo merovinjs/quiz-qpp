@@ -1,5 +1,4 @@
 .container {
-  background-color: #f10000;
   gap: 24px;
   display: flex;
   flex-wrap: wrap;
@@ -13,23 +12,35 @@
   align-items: center;
   justify-content: center;
   padding: 25px auto;
-  background-color: rgb(36, 133, 218);
+
   max-width: 450px;
 }
 .imgContainer {
-  background-color: chartreuse;
   width: 100%;
 }
 .questionImage {
   object-fit: contain;
   width: 100%;
 }
+.answerContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 5px;
+}
 .answerBtn {
+  width: 100%;
+  text-align: left;
   cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 500;
   border: none;
   background: transparent;
-  text-align: left;
-  padding: 5px 10px 3px 20px;
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 8px;
+  font-size: 14px;
 }
 
 .question {
@@ -41,5 +52,7 @@
   background: transparent;
   text-align: left;
   padding: 5px 10px 3px 20px;
-  background-color: aqua;
+}
+.altCizili {
+  text-decoration: underline;
 }
