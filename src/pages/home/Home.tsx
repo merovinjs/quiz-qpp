@@ -5,6 +5,9 @@ const Home = () => {
       <a className={styles.container} href="/turk">
         türkçe
       </a>
+      <a className={styles.container} href="/mathe">
+        mathematik
+      </a>
     </>
   );
 };
