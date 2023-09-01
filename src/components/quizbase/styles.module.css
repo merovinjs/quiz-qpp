@@ -1,3 +1,7 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .container {
   gap: 24px;
   display: flex;
@@ -5,6 +9,8 @@
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding-bottom: 25px;
 }
 .onequestion {
   display: flex;
@@ -40,7 +46,8 @@
   margin: 0;
   padding-left: 10px;
   padding-bottom: 8px;
-  font-size: 14px;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .question {
@@ -55,4 +62,8 @@
 }
 .altCizili {
   text-decoration: underline;
+}
+.modal {
+  position: absolute;
+  bottom: 0;
 }

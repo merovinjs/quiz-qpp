@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Question } from "../types/quizdatatype";
+
 import styles from "./styles.module.css";
+import { Question } from "../../types/quizdatatype";
+import Example from "../modal/Modal";
 const Quiz = ({ questions }: { questions: Question[] }) => {
   const [score, setScore] = useState(0);
-  const [showResult, setShowResult] = useState(false);
-  console.log(questions);
-  const handleClick = (onechoise: string, onequestion: any) => {
+
+  const selectChoise = (onechoise: string, onequestion: any) => {
     const { id, correctAnswer } = onequestion;
     if (onechoise === correctAnswer) {
       setScore((prevScores: any) => ({
@@ -18,7 +19,6 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
         [id]: -0.25,
       }));
     }
-    console.log(id, correctAnswer);
   };
   const handleTotal = () => {
     const totalScore = Object.values(score).reduce(
@@ -27,15 +27,11 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
     );
     return totalScore;
   };
-  const handleSonuc = () => {
-    handleTotal();
-    setShowResult(true);
-  };
 
   function styleKeywordsInText(text: string) {
     const keywords = ["görülünce", "zemin hazırlar", "noktasını", "günü"];
     const words = text.split(" ");
-    console.log(words);
+
     return words.map((word, index) =>
       keywords.includes(word) ? (
         <span key={index} className={styles.altCizili}>
@@ -63,7 +59,7 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
               ? onequestion.choices.map((onechoice: string, index: any) => (
                   <li
                     className={`${styles.answerBtn}`}
-                    onClick={() => handleClick(onechoice, onequestion)}
+                    onClick={() => selectChoise(onechoice, onequestion)}
                     key={onequestion.id + index}
                   >
                     {styleKeywordsInText(onechoice)}
@@ -72,7 +68,7 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
               : onequestion.choices.map((onechoice: string, index: any) => (
                   <li
                     className={`${styles.answerBtn}`}
-                    onClick={() => handleClick(onechoice, onequestion)}
+                    onClick={() => selectChoise(onechoice, onequestion)}
                     key={onequestion.id + index}
                   >
                     {onechoice}
@@ -81,8 +77,9 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
           </ul>
         </div>
       ))}
-      <button onClick={handleSonuc}>Sonuç Göster</button>
-      {showResult && <div>Total Score: {handleTotal()}</div>}
+      <div className={styles.modal}>
+        {<Example handleTotal={handleTotal()} score={score} />}
+      </div>
     </div>
   );
 };

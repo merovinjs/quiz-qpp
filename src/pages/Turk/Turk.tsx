@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import { quizData } from "../../data/quizdata";
-import Quiz from "../../components/Quiz";
+import Quiz from "../../components/quizbase/Quiz";
+
 const Turk = () => {
   return (
     <div className={styles.container}>
