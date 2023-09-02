@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import styles from "./styles.module.css";
 import { Question } from "../../types/quizdatatype";
-import Example from "../modal/Modal";
+import Modal from "../modal/Modal";
 const Quiz = ({ questions }: { questions: Question[] }) => {
   const [score, setScore] = useState(0);
 
@@ -78,7 +78,7 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
         </div>
       ))}
       <div className={styles.modal}>
-        {<Example handleTotal={handleTotal()} score={score} />}
+        {<Modal handleTotal={handleTotal()} score={score} />}
       </div>
     </div>
   );

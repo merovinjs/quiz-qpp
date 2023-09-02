@@ -7,21 +7,57 @@
 }
 
 .container2 {
-  width: 250px;
+  padding: 8px;
+  width: 300px;
   height: auto;
-  background-color: aquamarine;
+  background-color: #130020;
   position: relative;
+  color: white;
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.puanınız {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+.puanınızText {
+  color: aqua;
+  font-size: 24px;
+}
+.point {
+  font-size: 24px;
 }
 .button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -10px;
+  border: 2px solid rgb(255, 153, 0);
+  border-radius: 99px;
+  right: -10px;
+  cursor: pointer;
 }
+
 .wrongQestions {
   display: flex;
-  overflow: scroll;
+  overflow: auto;
   flex-wrap: wrap;
   justify-content: left;
   align-items: center;
   gap: 14px;
+}
+.bottomBtn {
+  margin-top: 18px;
+  border: none;
+  border-radius: 8px;
+  color: wheat;
+  background: #130020;
+  padding: 8px 24px;
+  font-size: 16px;
+  cursor: pointer;
 }

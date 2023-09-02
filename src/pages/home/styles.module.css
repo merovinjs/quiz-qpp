@@ -1,3 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 .container {
   background-color: aquamarine;
+}
+.btnContainer {
+  display: flex;
+  gap: 24px;
+  margin: 24px;
+}
+.btnContainer a {
+  width: 150px;
+  font-size: x-large;
+  text-decoration: none;
+  padding: 15px 35px;
+  background-color: aqua;
+  font-family: "Dancing Script", cursive;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 16px;
+  letter-spacing: 3px;
 }

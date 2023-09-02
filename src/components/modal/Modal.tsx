@@ -4,7 +4,7 @@ interface handleProp {
   handleTotal: () => void;
   score: any;
 }
-const Example = ({ handleTotal, score }: handleProp) => {
+const Modal = ({ handleTotal, score }: handleProp) => {
   let point: any = handleTotal;
   const [modal, setModal] = useState(false);
   const handleClick = () => {
@@ -16,9 +16,11 @@ const Example = ({ handleTotal, score }: handleProp) => {
     return (
       <div className={styles.container}>
         <div className={styles.container2}>
-          <div className={styles.Puanınız}>
-            <p>Puanınınız:</p>
-            <div>{point}</div>
+          <div className={styles.puanınız}>
+            <p className={styles.puanınızText}>Puanınınız:</p>
+            <div className={styles.point}>
+              {point > 20 ? point + `🎊` : point + `😢`}
+            </div>
           </div>
           <div className={styles.wrongQestions}>
             {scoreEntiries.map(([key, value]: any) => (
@@ -28,7 +30,9 @@ const Example = ({ handleTotal, score }: handleProp) => {
             ))}
           </div>
           <button className={styles.button} onClick={handleClick}>
-            close
+            <div style={{ backgroundColor: "fff" }}>
+              <img src="/close.svg" alt="close" />
+            </div>
           </button>
         </div>
       </div>
@@ -46,4 +50,4 @@ const Example = ({ handleTotal, score }: handleProp) => {
   );
 };
 
-export default Example;
+export default Modal;
