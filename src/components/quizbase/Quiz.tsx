@@ -5,10 +5,18 @@ import { Question } from "../../types/quizdatatype";
 import Modal from "../modal/Modal";
 const Quiz = ({ questions }: { questions: Question[] }) => {
   const [score, setScore] = useState(0);
+  const [selectedChoices, setSelectedChoices] = useState<Array<number | null>>(
+    questions.map(() => null)
+  );
 
-  const selectChoise = (onechoise: string, onequestion: any) => {
+  const selectChoice = (
+    onechoice: string,
+    onequestion: any,
+    questionIndex: number,
+    choiceIndex: number
+  ) => {
     const { id, correctAnswer } = onequestion;
-    if (onechoise === correctAnswer) {
+    if (onechoice === correctAnswer) {
       setScore((prevScores: any) => ({
         ...prevScores,
         [id]: +1,
@@ -19,7 +27,12 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
         [id]: -0.25,
       }));
     }
+
+    const newSelectedChoices = [...selectedChoices];
+    newSelectedChoices[questionIndex] = choiceIndex;
+    setSelectedChoices(newSelectedChoices);
   };
+
   const handleTotal = () => {
     const totalScore = Object.values(score).reduce(
       (acc, currentValue) => acc + currentValue,
@@ -45,7 +58,7 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
 
   return (
     <div className={styles.container}>
-      {questions.map((onequestion: any) => (
+      {questions.map((onequestion: any, questionIndex: number) => (
         <div className={styles.onequestion} key={onequestion.id}>
           <div className={styles.imgContainer}>
             <img
@@ -55,25 +68,28 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
             />
           </div>
           <ul className={styles.answerContainer}>
-            {onequestion.id === 14
-              ? onequestion.choices.map((onechoice: string, index: any) => (
-                  <li
-                    className={`${styles.answerBtn}`}
-                    onClick={() => selectChoise(onechoice, onequestion)}
-                    key={onequestion.id + index}
-                  >
-                    {styleKeywordsInText(onechoice)}
-                  </li>
-                ))
-              : onequestion.choices.map((onechoice: string, index: any) => (
-                  <li
-                    className={`${styles.answerBtn}`}
-                    onClick={() => selectChoise(onechoice, onequestion)}
-                    key={onequestion.id + index}
-                  >
-                    {onechoice}
-                  </li>
-                ))}
+            {onequestion.choices.map(
+              (onechoice: string, choiceIndex: number) => (
+                <li
+                  className={`${styles.answerBtn} ${
+                    selectedChoices[questionIndex] === choiceIndex
+                      ? styles.selected
+                      : ""
+                  }`}
+                  onClick={() =>
+                    selectChoice(
+                      onechoice,
+                      onequestion,
+                      questionIndex,
+                      choiceIndex
+                    )
+                  }
+                  key={onequestion.id + choiceIndex}
+                >
+                  {styleKeywordsInText(onechoice)}
+                </li>
+              )
+            )}
           </ul>
         </div>
       ))}
