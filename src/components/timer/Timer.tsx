@@ -9,7 +9,7 @@ const Timer = (): any => {
       </div>
     );
   };
-  const [timer, setTimer] = React.useState(15);
+  const [timer, setTimer] = React.useState(1500);
   useEffect(() => {
     if (timer > 0) {
       setTimeout(() => {
