@@ -5,14 +5,15 @@ interface handleProp {
   score: any;
 }
 const Modal = ({ handleTotal, score }: handleProp) => {
-  let point: any = handleTotal;
+  let points: any = handleTotal;
+  let point = Math.floor(points);
   const [modal, setModal] = useState(false);
   const handleClick = () => {
     setModal((prev) => !prev);
   };
-  const scoreEntiries = Object.entries(score);
 
   const ModalContainer = () => {
+    const scoreEntiries = Object.entries(score);
     return (
       <div className={styles.container}>
         <div className={styles.container2}>
@@ -25,7 +26,7 @@ const Modal = ({ handleTotal, score }: handleProp) => {
           <div className={styles.wrongQestions}>
             {scoreEntiries.map(([key, value]: any) => (
               <div className={styles.oneWrongQuestion} key={key}>
-                {value === -0.25 ? key + ".Soru yanlış" : ""}
+                {value === -0.33 ? key + ".Soru yanlış" : ""}
               </div>
             ))}
           </div>

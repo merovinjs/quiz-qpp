@@ -1,7 +1,9 @@
 interface Props {
   name: string;
 }
+import Timer from "../timer/Timer";
 import styles from "./styles.module.css";
+
 const Description = ({ name }: Props) => {
   return (
     <div className={styles.container}>
@@ -27,9 +29,10 @@ const Description = ({ name }: Props) => {
         </p>
       </div>
       <br />
-      <p>
+      <div>
         <b>BAŞARILAR...</b>
-      </p>
+        <Timer />
+      </div>
     </div>
   );
 };

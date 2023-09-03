@@ -24,7 +24,7 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
     } else {
       setScore((prevScores: any) => ({
         ...prevScores,
-        [id]: -0.25,
+        [id]: -0.33,
       }));
     }
 
