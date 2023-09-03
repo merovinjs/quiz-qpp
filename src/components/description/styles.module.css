@@ -1,0 +1,15 @@
+.title {
+  font-size: 32px;
+  font-family: "Russo One", sans-serif;
+  padding: 5px;
+}
+.container {
+  padding: 10px;
+  background: transparent;
+  text-align: center;
+  box-shadow: 5px 5px 15px 0.1px rgb(165, 153, 153);
+  font-size: 18px;
+}
+.descContainer {
+  text-align: left;
+}
