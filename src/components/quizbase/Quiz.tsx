@@ -42,7 +42,7 @@ const Quiz = ({ questions }: { questions: Question[] }) => {
   };
 
   function styleKeywordsInText(text: string) {
-    const keywords = ["görülünce", "zemin hazırlar", "noktasını", "günü"];
+    const keywords = ["görülünce", "zeminhazırlar.", "noktasını", "günü"];
     const words = text.split(" ");
 
     return words.map((word, index) =>

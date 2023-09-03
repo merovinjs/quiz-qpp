@@ -137,7 +137,7 @@ export const quizData = {
       question: "/t2020/t14_20.png",
       choices: [
         "A) Doğaya zarar verdiği görülünce yapılan iş durduruldu. <=> Karşılaşılmak,rastlanmak",
-        "B) Ormanların yok edilmesi doğal felaketlere zemin hazırlar. <=> Uygun ortam hazırlamak",
+        "B) Ormanların yok edilmesi doğal felaketlere zeminhazırlar. <=> Uygun ortam hazırlamak",
         "C) Köşkten çıktık ve bahçenin her noktasını uzun uzun dolaştık. <=> Konuyla ilgili en önemli bölüm",
         "D) Zavallı, hayatının hiçbir döneminde güzel bir günü geçmedi. <=> İçinde bulunulan zaman",
       ],
@@ -151,7 +151,7 @@ export const quizData = {
         "A) Daracık ve bozuk kaldırımlardan çamurlu sular akıyordu.",
         "B) En önemli sorunları bile kendine dert etmezdi",
         "C) Yazar bir romanında sıradan bir konuya yer vermiştir.",
-        "D) Yapmacık davranışları yüzünden hiç sevilmezd",
+        "D) Yapmacık davranışları yüzünden hiç sevilmezdi",
       ],
       correctAnswer: "C) Yazar bir romanında sıradan bir konuya yer vermiştir.",
     },

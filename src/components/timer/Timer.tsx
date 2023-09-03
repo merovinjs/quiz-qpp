@@ -26,9 +26,8 @@ const Timer = (): any => {
   return (
     <div>
       {timer === 0 ? (
-        <>
-          <FinishComponent />
-        </>
+        //bu komponenti belirli bir saniye gösterecem
+        <>{<FinishComponent />}</>
       ) : (
         <div>
           {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
