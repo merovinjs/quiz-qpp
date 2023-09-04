@@ -11,11 +11,13 @@ const Description = ({ name }: Props) => {
       <br />
       <div className={styles.descContainer}>
         <p>
-          <b>1.</b>&nbsp;Bu test toplam 25 sorudan oluşur ve süre 25 dakikadır.
+          <b>1.</b>&nbsp;Bu test toplam <b>25</b> sorudan oluşur ve süre{" "}
+          <b>25</b>&nbsp; dakikadır.
         </p>
         <br />
         <p>
-          <b>2.</b>&nbsp;Her 3 yanlış cevap 1 doğru cevabı götürecektir.
+          <b>2.</b>&nbsp;Her <b>3</b> yanlış cevap <b>1</b> doğru cevabı
+          götürecektir.
         </p>
         <br />
         <p>
@@ -24,8 +26,8 @@ const Description = ({ name }: Props) => {
         </p>
         <br />
         <p>
-          <b>4.</b>&nbsp;25 dakika içerisinde cevaplarınızı değiştirme hakkınız
-          bulunmaktadır.
+          <b>4.</b>&nbsp;<b>25</b> dakika içerisinde cevaplarınızı değiştirme
+          hakkınız bulunmaktadır.
         </p>
       </div>
       <br />

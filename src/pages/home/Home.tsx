@@ -16,13 +16,13 @@ const Home = () => {
 
   return (
     <>
-      <div className={styles.btnContainer}>
-        <a style={{ backgroundColor: colors[0] }} href="/turk">
-          Türkçe 2020 soruları
-        </a>
-        <a style={{ backgroundColor: colors[4] }} href="/mathe">
-          Mathematik 2020 soruları
-        </a>
+      <div className={styles.container}>
+        <h1>Bursluluk Sınavı Çıkmış Sorular</h1>
+        <div className={styles.btnContainer}>
+          <a style={{ backgroundColor: colors[0] }} href="/turk">
+            Türkçe 2020 soruları
+          </a>
+        </div>
       </div>
     </>
   );
