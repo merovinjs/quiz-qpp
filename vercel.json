@@ -1,6 +1,7 @@
 {
   "routes": [
     { "src": "/turk", "dest": "/index.html" },
-    { "src": "/mathe", "dest": "/index.html" }
+    { "src": "/mathe", "dest": "/index.html" },
+    { "src": "/odev", "dest": "/index.html" }
   ]
 }
