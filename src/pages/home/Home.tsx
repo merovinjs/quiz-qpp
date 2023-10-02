@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 const Home = () => {
-  let colors: string[] = ["#3c787e", "#241623", "#d56f3e", "#92140c"];
+  const colors: string[] = ["#3c787e", "#241623", "#d56f3e", "#92140c"];
 
   return (
     <div className={styles.home}>
@@ -12,6 +12,11 @@ const Home = () => {
         <div className={styles.btnContainer}>
           <a style={{ backgroundColor: colors[0] }} href="/turk">
             Türkçe 2020 soruları
+          </a>
+        </div>
+        <div className={styles.btnContainer}>
+          <a style={{ backgroundColor: colors[1] }} href="/odev">
+            Ödevlerin doğru çözümleri
           </a>
         </div>
       </div>

@@ -4,3 +4,7 @@ export interface Question {
   choices: string[];
   correctAnswer: string;
 }
+export interface YanlısCvpType {
+  id: number;
+  question: string;
+}

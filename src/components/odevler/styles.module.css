@@ -1,0 +1,7 @@
+.imgContainer {
+  max-width: 450px;
+}
+.questionImg {
+  object-fit: contain;
+  width: 100%;
+}
