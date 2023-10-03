@@ -2,7 +2,7 @@ export const yanlıscvpdata = {
   questions: [
     {
       id: 1,
-      question: "/02.10.23/ödev.png",
+      question: "/02.10.23/ödev1.png",
     },
     {
       id: 2,
