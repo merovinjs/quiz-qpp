@@ -1,3 +1,6 @@
-.Baslik {
-  font-size: 25px;
+.container {
+  max-width: 1200px;
+  height: 500px;
+  width: 100%;
+  margin: 0 auto;
 }

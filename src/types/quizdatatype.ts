@@ -7,4 +7,5 @@ export interface Question {
 export interface YanlısCvpType {
   id: number;
   question: string;
+  alt: string;
 }
