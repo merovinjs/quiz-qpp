@@ -5,7 +5,7 @@
 }
 .container {
   width: 100%;
-  height: 100%;
+  height: 50%;
   position: relative;
 }
 .imgSliderContainer {
@@ -36,6 +36,6 @@
 .imgSliderBtn > * {
   stroke: azure;
   fill: black;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }

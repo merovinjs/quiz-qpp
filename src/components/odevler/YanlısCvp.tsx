@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { YanlısCvpType } from "../../types/quizdatatype";
 import styles from "./styles.module.css";
-import {
-  BsFillArrowRightSquareFill,
-  BsFillArrowLeftSquareFill,
-} from "react-icons/bs";
+import { BiLeftArrowCircle, BiRightArrowCircle } from "react-icons/bi";
 export const YanlısCvp = ({
   yanlıscvpdata,
 }: {
@@ -41,14 +38,14 @@ export const YanlısCvp = ({
         className={`${styles.imgSliderBtn}`}
         style={{ left: 0 }}
       >
-        <BsFillArrowLeftSquareFill />
+        <BiLeftArrowCircle />
       </button>
       <button
         onClick={showNextImg}
         className={`${styles.imgSliderBtn}`}
         style={{ right: 0 }}
       >
-        <BsFillArrowRightSquareFill />
+        <BiRightArrowCircle />
       </button>
     </div>
   );
